@@ -1,0 +1,16 @@
+Index: src/app/components/student/list/student-list.component.ts
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/app/components/student/list/student-list.component.ts	(revision Local Version)
++++ src/app/components/student/list/student-list.component.ts	(revision Shelved Version)
+@@ -22,7 +22,7 @@
+     const studentList = this.studentService.getAllStudents();
+     this.success(studentList);
+   }
+-
++аыаыва
+   success(data) {
+     this.studentListData = data.data;
+     for (let i = 0; i < this.studentListData.length; i++) {

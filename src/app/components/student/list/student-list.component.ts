@@ -3,13 +3,14 @@ import {Component, OnInit} from '@angular/core';
 import {StudentService} from '../../../services/student/student.service';
 
 @Component({
-  selector: 'app-student-list',
+  selector: 'app-root',
   templateUrl: './student-list.component.html',
   styleUrls: ['./student-list.component.css'],
 })
 
 export class StudentListComponent implements OnInit {
   studentListData: any;
+  filterData: any;
 
   constructor(private studentService: StudentService) {
   }

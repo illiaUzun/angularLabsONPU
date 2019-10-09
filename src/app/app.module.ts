@@ -13,6 +13,9 @@ import {StudentDetailsComponent} from './components/student/details/student-deta
 import {HomeComponent, homeChildRoutes} from './components/home/home.component';
 import {HighlightStudentDirective} from './directives/highlight-student.directive';
 
+import { FilterPipe } from './pipes/filter.pipe';
+import { PhonePipe } from './pipes/phone.pipe';
+
 const routes: Routes = [
   {
     path: '',
@@ -31,7 +34,9 @@ const routes: Routes = [
     StudentListComponent,
     StudentDetailsComponent,
     HomeComponent,
-    HighlightStudentDirective
+    HighlightStudentDirective,
+    FilterPipe,
+    PhonePipe,
   ],
   imports: [
     BrowserModule,
