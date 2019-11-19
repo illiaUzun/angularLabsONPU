@@ -1,0 +1,47 @@
+<div class="container-fluid d-flex flex-column justify-content-center align-items-center vh-100">
+
+  <form *ngIf="user; else loading" class="border border-secondary p-4" [formGroup]="loginForm">
+    <div>
+      <ly-field class="w-16 ">
+        <input lyNativeControl id="username" type="text" name="username" placeholder="Username"
+               formControlName="username"/>
+      </ly-field>
+
+    </div>
+    <div>
+      <ly-field class="w-16">
+        <input lyNativeControl id="email" type="email" name="email" placeholder="Email" formControlName="email"/>
+      </ly-field>
+
+    </div>
+    <div>
+      <ly-field class="w-16">
+        <input lyNativeControl id="password" type="password" name="password" placeholder="Password"
+               formControlName="password"/>
+      </ly-field>
+    </div>
+    <div>
+      <ly-field class="w-16">
+        <ly-select placeholder="Select City" formControlName="city">
+          <ly-option value="odessa">Odessa</ly-option>
+          <ly-option value="kyiv">Kiev</ly-option>
+          <ly-option value="lviv">London</ly-option>
+          <ly-option value="lviv">Moscow</ly-option>
+        </ly-select>
+      </ly-field>
+    </div>
+    <div>
+      <ly-radio-group formControlName="gender">
+        <span>Gender: </span>
+        <ly-radio value="male ">Male</ly-radio>
+        <ly-radio value="female ">Female</ly-radio>
+      </ly-radio-group>
+    </div>
+  </form>
+
+  <ng-template #loading>
+    <mat-spinner></mat-spinner>
+  </ng-template>
+
+  <app-button (onclick)="redirectToProfile() " [btnLable]="btnLable "></app-button>
+</div>

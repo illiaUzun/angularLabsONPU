@@ -1,0 +1,35 @@
+@import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+@import '~@swimlane/ngx-datatable/index.css';
+@import '~@swimlane/ngx-datatable/themes/material.scss';
+@import '~@swimlane/ngx-datatable/assets/icons.css';
+* {
+    box-sizing: border-box;
+}
+
+body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, 'Helvetica Neue', sans-serif;
+}
+
+.vh-100 {
+    min-height: 100vh;
+}
+
+.w-16 {
+    width: 16rem;
+}
+
+.w-100 {
+    width: 100%;
+}

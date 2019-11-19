@@ -1,0 +1,80 @@
+<div class="vh-100 container">
+    <div class="row justify-content-center">
+        <ly-tabs [selectedIndex]="0" class="col-12 ">
+
+            <!--Profile Tab-->
+            <ly-tab>
+                <button ly-tab-label>Profile</button>
+                <div class="container">
+                    <div class="row mt-2 d-flex justify-content-center">
+                        <div class="card col-6  min-w-20">
+                            <div class="row no-gutters">
+                                <div class="col-12">
+                                    <div class="card-body text-dark">
+                                        <h5 class="card-title">{{user.username}}</h5>
+                                        <p class="card-text">Email: {{user.email}}</p>
+                                        <p class="card-text">Selected City: {{user.city}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </ly-tab>
+
+            <!--Weather Tab-->
+            <ly-tab>
+                <button ly-tab-label>Weather Info</button>
+                <div class="container">
+                    <div class="row d-flex flex-column justify-content-center align-items-center">
+                        <div class="col-12 table-responsive">
+
+                            <ngx-datatable class="material" rowHeight="auto" [rows]="weatherForecast" [columns]="[{ name: 'Date' },{ name: 'Weather' },
+                            { name: 'Min Temperature' }, { name: 'Max Temperature' }, { name: 'Pressure' },
+                            { name: 'Clouds' }]" [headerHeight]="50" [footerHeight]="50" [limit]="10">
+                                <ngx-datatable-column name="Date" width="200">
+                                    <ng-template let-value="value" ngx-datatable-cell-template>
+                                        <strong>{{ value }}</strong>
+                                    </ng-template>
+                                </ngx-datatable-column>
+
+                                <ngx-datatable-column name="Weather" width="200">
+                                    <ng-template let-value="value" ngx-datatable-cell-template>
+                                        <strong>{{ value }}</strong>
+                                    </ng-template>
+                                </ngx-datatable-column>
+
+                                <ngx-datatable-column name="Min Temperature" width="200">
+                                    <ng-template let-value="value" ngx-datatable-cell-template>
+                                        <strong>{{ value }}</strong>
+                                    </ng-template>
+                                </ngx-datatable-column>
+
+                                <ngx-datatable-column name="Max Temperature" width="200">
+                                    <ng-template let-value="value" ngx-datatable-cell-template>
+                                        <strong>{{ value }}</strong>
+                                    </ng-template>
+                                </ngx-datatable-column>
+
+                                <ngx-datatable-column name="Pressure" width="200">
+                                    <ng-template let-value="value" ngx-datatable-cell-template>
+                                        <strong>{{ value }}</strong>
+                                    </ng-template>
+                                </ngx-datatable-column>
+
+                                <ngx-datatable-column name="Clouds" width="200">
+                                    <ng-template let-value="value" ngx-datatable-cell-template>
+                                        <strong>{{ value }}</strong>
+                                    </ng-template>
+                                </ngx-datatable-column>
+                            </ngx-datatable>
+                        </div>
+                    </div>
+                </div>
+            </ly-tab>
+
+        </ly-tabs>
+        <app-button class="logout-btn" [btnLable]="btnLable" (onclick)="onLogoutClicked()"></app-button>
+    </div>
+</div>
